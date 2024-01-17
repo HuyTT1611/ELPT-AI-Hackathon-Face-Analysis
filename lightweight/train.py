@@ -80,7 +80,7 @@ def main(args):
     if torch.cuda.is_available():
         model = torch.nn.DataParallel(model).cuda()
         
-    if args.use_pretrain==True:
+    if args.use_pretrain==False:
         exp_dir = os.path.join('exp_result_vehicle1', args.dataset)
         model_path = os.path.join(exp_dir, args.dataset, 'img_model', 'ckpt_max.pth')
         checkpoint = torch.load(model_path)
