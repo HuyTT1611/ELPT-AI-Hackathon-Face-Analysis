@@ -192,7 +192,7 @@ def argument_parser():
 
     parser.add_argument("--yolo_dir", type=str, default='./checkpoints/best.pt')
 
-    parser.add_argument("--phase", type=str, default='private_test')
+    parser.add_argument("--phase", type=str, default='private')
 
     args = parser.parse_args()
 

@@ -62,7 +62,6 @@ python train_face_analysis.py
 ```
 
 ### Lightweight face analysis model 
-```yaml
 
 ```bash
 cd lightweight
@@ -78,10 +77,10 @@ Download pretrained YOLOv8 model from this [link](https://drive.google.com/file/
 
 Download pretrained backbone model from this [link](https://drive.google.com/file/d/1B4ttu-VcXHttOLHZEDkH0468xL61be-7/view?usp=sharing) and move it to  ```./pretrained ```
 
-Download pretrained Transformer face analysis model from this [link](https://drive.google.com/file/d/1Vst8DTkuE7_lFqetcTsBRVUlSxjV0Dop/view?usp=sharing) and move it to  ```./exp_result/HACKATHON/result/img_model/checkpoints ```
+Download final Transformer face analysis model from this [link](https://drive.google.com/file/d/15NFNiMTnzQqr35q51HjiL48kgJ7uW8Sw/view?usp=sharing) and move it to  ```./exp_result/HACKATHON/result/img_model/checkpoints ```
 
 ```bash
-python inference.py --images_dir "your images dir" --json_dir "path of json file of public or private test" --phase "public_test/private_test"
+python inference.py --images_dir "your images dir" --json_dir "path of json file of public or private test" --phase "public/private"
 ```
 
 ### Lightweight face analysis model
