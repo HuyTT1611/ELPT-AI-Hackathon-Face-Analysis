@@ -73,7 +73,7 @@ python train.py --root_path ./face_attributes/images --train_path ./face_attribu
 
 ### Transformer face analysis model 
 
-Download pretrained YOLOv8 model from this [link](https://drive.google.com/file/d/1140s4fia8e8b3N_v2Ea_TstBF4BUN4_v/view?usp=sharing) and move it to  ```./checkpoints ```
+Download pretrained YOLOv8 model from this [link](https://drive.google.com/file/d/1GQW4EjaJRxstUzTg7-eiKvgTjj2N_mPp/view?usp=sharing) and move it to  ```./checkpoints ```
 
 Download pretrained backbone model from this [link](https://drive.google.com/file/d/1B4ttu-VcXHttOLHZEDkH0468xL61be-7/view?usp=sharing) and move it to  ```./pretrained ```
 
