@@ -4,7 +4,7 @@ Huy T. Tran, Phuong D. Do
 
 In this repository, we introduce two methods for face-analysis problem. First method is based Transformer for highest accuracy in public and private test. 
 Second method is based CNN (lightweight) for deploy in cpu and mobile. For face detection we use YOLOv8, output of this model is input of two methods above.
-In the next round of competition, we will use distillation between first method(tearcher) and second method(student) to improve accuracy of second 
+In the next round of competition, we will use distillation between first method(teacher) and second method(student) to improve accuracy of second 
 method with fast inference speed on cpu and gpu. 
 
 ## 1. Prepare the dataset from AI-Hackathon-Face-Analysis
