@@ -85,7 +85,7 @@ def main(args):
 
     load_pretrained_weights(model, model_path)
     model.eval()
-    model_onnx_path = args.pytorch_model_path
+    model_onnx_path = args.onnx_model_path
 
     dummy_input = torch.randn(1, 3, 224, 224) 
     torch_onnx.export(model, dummy_input, model_onnx_path,
