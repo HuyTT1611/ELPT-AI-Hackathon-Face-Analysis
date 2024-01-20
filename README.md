@@ -87,7 +87,7 @@ python inference.py --images_dir "your images dir" --json_dir "path of json file
 
 Download pretrained YOLOv8 model from this [link](https://drive.google.com/file/d/1140s4fia8e8b3N_v2Ea_TstBF4BUN4_v/view?usp=sharing) and move it to  ```./checkpoints ```
 
-Download pretrained Lightweight face analysis model from this [link](https://drive.google.com/file/d/1dBG3yAkMEk4uHW6oFQGlvWgsaJCMV-td/view?usp=sharing) and move it to  ```./lightweight```
+Download pretrained Lightweight face analysis model from this [link]([https://drive.google.com/file/d/1dBG3yAkMEk4uHW6oFQGlvWgsaJCMV-td/view?usp=sharing](https://drive.google.com/file/d/1oJUPrW9lNZWOgxtP2EXyjOygLulVc2Iw/view?usp=drive_link)) and move it to  ```./lightweight```
 
 ```bash
 cd lightweight
