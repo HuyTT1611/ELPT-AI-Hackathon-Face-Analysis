@@ -123,12 +123,12 @@ def main(cfg, args):
                 for row in data:
                     answer_writer.writerow(row)
     else :
-        first_line = ['file_name', 'height', 'width','image_id','bbox', 'skintone' ,'age', 'race',  'emotion', 'gender', 'masked']
-        image_list = json_data['images']
+        first_line = ['file_name', 'bbox', 'image_id', 'race', 'age', 'emotion', 'gender', 'skintone', 'masked']
+        
         # Now, json_data is a Python dictionary containing the data from the JSON file
         with torch.no_grad():
-            for img in image_list:
-                filename = img['file_name']
+             for i, file in enumerate(os.listdir(args.images_dir)):
+                filename=file
                 image = Image.open(os.path.join(args.images_dir, filename)).convert('RGB')
                 copy_image = image.copy()
                 results = model_yolo(image)
@@ -147,21 +147,19 @@ def main(cfg, args):
                         for valid_prob in valid_probs:
                             new_row = []
                             new_row.append(filename)
-                            new_row.append(img['height'])
-                            new_row.append(img['width'])
-                            new_row.append(img['id'])
                             new_row.append([float(x.cpu()),float(y.cpu()), float(width.cpu()), float(height.cpu())])
+                            new_row.append(int(i+1))
                             _, max_index_race = torch.max(valid_prob[6:9], dim=0)
                             _, max_index_age = torch.max(valid_prob[0:6], dim=0)
                             _, max_index_emotion = torch.max(valid_prob[15:22], dim=0)
                             _, max_index_gender = torch.max(valid_prob[22:24], dim=0)
                             _, max_index_skintone = torch.max(valid_prob[11:15], dim=0)
                             _, max_index_masked = torch.max(valid_prob[9:11], dim=0)
-                            new_row.append(attribute[max_index_skintone+11])
-                            new_row.append(attribute[max_index_age])
                             new_row.append(attribute[max_index_race+6])
+                            new_row.append(attribute[max_index_age])
                             new_row.append(attribute[max_index_emotion+15])
                             new_row.append(attribute[max_index_gender+22])
+                            new_row.append(attribute[max_index_skintone+11])
                             new_row.append(attribute[max_index_masked+9])
                             print(new_row)
                             data.append(new_row)
