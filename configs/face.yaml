@@ -1,0 +1,52 @@
+NAME: 'result'
+
+DATASET:
+  TYPE: 'face'
+  NAME: 'HACKATHON'
+  TRAIN_SPLIT: 'trainval'
+  VAL_SPLIT: 'test'
+  ZERO_SHOT: False
+  LABEL: 'eval'
+  HEIGHT: 256
+  WIDTH:  128
+  PHASE1_ROOT_PATH: '/data/AI/backup/phuongdd/Computer-Vison/attributes'
+  PHASE2_ROOT_PATH: '/data/AI/backup/phuongdd/Computer-Vison/attributes'
+  ROOT_PATH: '/data/AI/backup/phuongdd/Computer-Vison/attributes/images'
+
+RELOAD:
+  TYPE: False
+  NAME: 'backbone'
+
+BACKBONE:
+  TYPE: 'swin_b' # swin_t/s/b
+
+CLASSIFIER:
+  NAME: 'linear'
+  POOLING: 'avg'
+  SCALE: 1
+  BN: False
+
+LOSS:
+  TYPE: 'bceloss'
+  LOSS_WEIGHT: [1]
+  SAMPLE_WEIGHT: 'weight'
+
+
+TRAIN:
+  CLIP_GRAD: True
+  BATCH_SIZE: 64
+  OPTIMIZER:
+    TYPE: 'adam'
+    WEIGHT_DECAY: 0.0
+  LR_SCHEDULER:
+    TYPE: 'plateau'
+    LR_FT: 0.00001
+    LR_NEW: 0.00001
+  EMA:
+    ENABLE: False
+
+METRIC:
+  TYPE: 'face'
+
+VIS:
+  CAM: 'valid'
